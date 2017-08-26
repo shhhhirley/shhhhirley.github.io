@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -256,6 +256,118 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/08/24/hadoop-installation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/24/hadoop-installation/" itemprop="url">Hadoop</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-24T14:33:36-07:00">
+                2017-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hadoop笔记(二)：Hadoop的安装<br>安装Hadoop之前搜了很多关于Hadoop是什么的资料，大部分的资料都将Hadoop讲得神乎其神，然而看了这些文字之后仍然不懂Hadoop到底能干什么样的事情。于是我想要从例子出发，理解Hadoop到底是怎么样工作的。本节内容讲的是如何在Mac上安装Hadoop并且配置Eclipse，以及运行MapReduce的“hello world”程序–WordCount.<br>1.安装Hadoop：<br>安装的教程在网上都能找到,我参考的文章是：<a href="http://blog.csdn.net/u012336567/article/details/50778989。" target="_blank" rel="external">http://blog.csdn.net/u012336567/article/details/50778989。</a><br>安装Hadoop之前需要安装ssh，因为安装Hadoop需要远程登录。Mac OS X在“系统偏好设置”“共享”中的“远程登录”勾选ssh就可以了。然后运行下面命令行确认是否需要密码登录localhost：<br>$ ssh localhost<br>设置ssh免密码登录：<br>$ ssh-keygen -t dsa -P ‘’ -f ~/.ssh/id_dsa<br>第一行：ssh-keygen代表生成密钥，-t指定生成的密钥类型，dsa代表dsa密钥认证；-p提供密语，-f指生成的密钥文件<br>第二行：将公钥加入到用于认证的公钥文件中<br>$ cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys<br>接下来就可以安装Hadoop了。主要的命令行是:<br>$ brew install hadoop(安装Hadoop)在Mac上不需要自己配置Java_Home因为brew在安装时已经配置好。<br>安装之后还要修改配置文件。配置过程参见上面的链接。<br>2.运行Hadoop：<br>跳转目录/usr/local/Cellar/hadoop/2.8.0/bin下：<br>$ hadoop namenode -format<br>再进入/usr/local/Cellar/hadoop/2.8.0/sbin,执行：<br>$ ./start-all.sh<br>访问一下网址可以查看Hadoop是否成功运行：<br>Resource Manager: <a href="http://localhost:50070" target="_blank" rel="external">http://localhost:50070</a><br>JobTracker: <a href="http://localhost:8088" target="_blank" rel="external">http://localhost:8088</a><br>Specific Node Information: <a href="http://localhost:8042" target="_blank" rel="external">http://localhost:8042</a><br>3.配置Eclipse:<br>下载puglins，在finder中右击eclipse图标，选择“显示包内容”，进入文件夹，将下载的压缩包解压，之后将其中的2.6.0版本的jar包拷贝到plugins文件夹中。此时，打开eclpse的“偏好设置”，发现里面有了Hadoop Map/Reduce选项，点开后，将/usr/local/Cellar/hadoop/2.8.0/libexec拷贝到Hadoop installation directory中。建立Hadoop项目就可以了。<br>4.运行WordCount程序:<br>WordCount代码网上可以找到，我现在只试着运行代码看结果，之后再去理解代码。运行的步骤如下：<br>在新建的Hadoop项目中建立class，将代码复制到class中，然后导出jar包(也可以直接运行程序，但是要输入参数，本文只讲导出jar包在命令行执行的过程)。然后将jar包放到主目录下，即/Users/**/,在后面的命令行中都要带着路径。执行一下命令行：<br>$ hadoop mkdir -input<br>$ hadoop put </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/07/10/My-New-Post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -275,7 +387,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/10/My-New-Post/" itemprop="url">java</a></h1>
+                <a class="post-title-link" href="/2017/07/10/My-New-Post/" itemprop="url">Hadoop</a></h1>
         
 
         <div class="post-meta">
@@ -285,7 +397,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T00:16:13-07:00">
                 2017-07-10
@@ -398,7 +510,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-09T08:57:56-07:00">
                 2017-07-09
@@ -525,8 +637,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -539,7 +651,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -589,7 +701,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
