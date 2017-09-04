@@ -256,6 +256,155 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/04/leetcode-32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/04/leetcode-32/" itemprop="url">leetcode-32</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T11:56:08-07:00">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I spent very long time in this problem and trapeed in a wrong idea for hours. At last, I read other’s solution and learnt that the code is very concise. I was not sure how to process the situation where the left parentheses are more than right ones. If I solved this problem by splitting the string by left parenthesis, another mistake will apear when the right parenthesis is in front of left one. Finally, I wrote very long code without balancing these two problems. </p>
+<p>The rightful dealing with left parenthesis more than right ones should not be splitting by left column, but only mark the position of the first left parenthesis after poping. There are three situations: </p>
+<ol>
+<li>‘(‘ : just push into the stack</li>
+<li>‘)’ : If the stack is empty, change the start position to the one right to the current position. Otherwise, pop, if the stack is not empty yet, longest string should be current position minus the position at top of the stack. Otherwise, longest string is current postion minus start position plus 1.</li>
+</ol>
+<pre><code>public class longesrValidParentheses {
+    public static int longest(String s)
+    {
+        Stack&lt;Integer&gt; st = new Stack&lt;&gt;();
+        int start = 0;
+        int max = 0;
+        for(int i = 0; i &lt; s.length(); i++)
+        {
+            if(s.charAt(i) == &apos;(&apos;)
+                st.push(i);
+            else{
+                if(st.isEmpty())
+                {
+                    start = i + 1;
+                }
+                else {
+                    st.pop();
+                    if(!st.isEmpty())
+                    {
+                        max = Math.max(i-st.peek(),max);
+                    }
+                    else 
+                    {
+                        max = Math.max(i-start+1, max);
+                    }
+                }
+            }
+
+        }
+        return max;
+    }
+    }
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/02/leetcode-29/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -873,7 +1022,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -886,7 +1035,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">Tags</span>
               
             </div>
