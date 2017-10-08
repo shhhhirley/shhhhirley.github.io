@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="被各种dp题虐的体无完肤。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[n+1];        num[0] = 1;//空树        num[1] = 1;//一个节点        for(int i = 2; i &amp;lt">
+<meta name="description" content="被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[">
 <meta name="keywords" content="unique binary search tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lc 96">
 <meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-96/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
-<meta property="og:description" content="被各种dp题虐的体无完肤。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[n+1];        num[0] = 1;//空树        num[1] = 1;//一个节点        for(int i = 2; i &amp;lt">
-<meta property="og:updated_time" content="2017-10-08T23:50:50.000Z">
+<meta property="og:description" content="被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[">
+<meta property="og:updated_time" content="2017-10-08T23:53:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lc 96">
-<meta name="twitter:description" content="被各种dp题虐的体无完肤。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[n+1];        num[0] = 1;//空树        num[1] = 1;//一个节点        for(int i = 2; i &amp;lt">
+<meta name="twitter:description" content="被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[">
 
 
 
@@ -320,7 +320,7 @@
       
 
       
-        <p>被各种dp题虐的体无完肤。</p>
+        <p>被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。<br>以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numTrees(int n) &#123;</div><div class="line">        int[] num = new int[n+1];</div><div class="line">        num[0] = 1;//空树</div><div class="line">        num[1] = 1;//一个节点</div><div class="line">        for(int i = 2; i &lt;= n; i++)</div><div class="line">        &#123;</div><div class="line">            for(int j = 0; j &lt; i; j++)</div><div class="line">                num[i] += num[j]*num[i-1-j];//以j+1为root的树的个数</div><div class="line">        &#125;</div><div class="line">        return num[n];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
