@@ -93,15 +93,16 @@
 
 
 
-<meta name="description" content="Shirley Wang&apos;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shirley&#39;s Blog">
-<meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/archives/2017/index.html">
+<meta name="description" content="Leetcode 123 My solution: Dynammic programming but with $$$O(n^2)$$$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.lengt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stock transaction">
+<meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/09/stock-transaction/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
-<meta property="og:description" content="Shirley Wang&apos;s blog">
+<meta property="og:description" content="Leetcode 123 My solution: Dynammic programming but with $$$O(n^2)$$$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.lengt">
+<meta property="og:updated_time" content="2017-10-10T06:15:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shirley&#39;s Blog">
-<meta name="twitter:description" content="Shirley Wang&apos;s blog">
+<meta name="twitter:title" content="stock transaction">
+<meta name="twitter:description" content="Leetcode 123 My solution: Dynammic programming but with $$$O(n^2)$$$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.lengt">
 
 
 
@@ -129,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/zhchnchn/zhchnchn.github.io.git/archives/2017/"/>
+  <link rel="canonical" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/09/stock-transaction/"/>
 
 
 
 
 
-  <title>Archive | Shirley's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>stock transaction | Shirley's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -160,7 +161,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  page-archive  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,403 +245,146 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Um..! 16 posts in total. Keep on posting.
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/09/stock-transaction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">stock transaction</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T23:01:23-07:00">
+                2017-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p>Leetcode 123</p>
+<p>My solution: Dynammic programming but with $$$O(n^2)$$$ complexity.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">public int maxProfit(int[] prices) &#123;</div><div class="line">        if(prices.length == 0)</div><div class="line">            return 0;</div><div class="line">        int profit[][] = new int[prices.length][prices.length];</div><div class="line">        int max = 0;</div><div class="line">        int max_val = max_pro(prices);</div><div class="line">       </div><div class="line">        for(int i = 1; i &lt; prices.length-1; i++)</div><div class="line">        &#123;</div><div class="line">            for(int j = 0; j &lt; prices.length-i; j++)</div><div class="line">            &#123;</div><div class="line">               profit[j][j+i] = Math.max(Math.max(profit[j+1][j+i],profit[j][j+i-1]),prices[j+i]-prices[j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(int i = 1; i &lt; prices.length; i++)</div><div class="line">            max = Math.max(profit[0][i] + profit[i][prices.length-1], max);</div><div class="line">        max = Math.max(max, max_val);</div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">public int max_pro(int[] prices) &#123;</div><div class="line">        Stack&lt;Integer&gt; s = new Stack();</div><div class="line">        int max = 0;</div><div class="line">        for(int i = 0; i &lt; prices.length; i++)</div><div class="line">        &#123;</div><div class="line">            </div><div class="line">            if(s.isEmpty() || !s.isEmpty() &amp;&amp; prices[i] &lt; s.peek())</div><div class="line">                s.push(prices[i]);</div><div class="line">            else max = (max&lt;prices[i]-s.peek())?prices[i]-s.peek():max;</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>Smart solution:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int maxProfit(int[] prices) &#123;</div><div class="line">        int buy1 = Integer.MIN_VALUE, sell1 = 0, buy2 = Integer.MIN_VALUE, sell2 = 0;</div><div class="line">        for(int i = 0; i &lt; prices.length; i++)</div><div class="line">        &#123;</div><div class="line">            buy1 = Math.max(buy1, -prices[i]);</div><div class="line">            sell1 = Math.max(sell1, buy1+prices[i]);</div><div class="line">            buy2 = Math.max(sell1-prices[i],buy2);</div><div class="line">            sell2 = Math.max(buy2+prices[i], sell2);</div><div class="line">        &#125;</div><div class="line">        return sell2;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/08/lc-95/" rel="next" title="lc_95">
+                <i class="fa fa-chevron-left"></i> lc_95
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
         </div>
       
-      
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/09/stock-transaction/" itemprop="url">
-              
-                <span itemprop="name">stock transaction</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-09T23:01:23-07:00"
-              content="2017-10-09" >
-          10-09
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/08/lc-95/" itemprop="url">
-              
-                <span itemprop="name">lc_95</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-08T20:34:31-07:00"
-              content="2017-10-08" >
-          10-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/08/lc-96/" itemprop="url">
-              
-                <span itemprop="name">lc 96</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-08T16:44:05-07:00"
-              content="2017-10-08" >
-          10-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/08/lc-84/" itemprop="url">
-              
-                <span itemprop="name">lc 84</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-08T11:59:29-07:00"
-              content="2017-10-08" >
-          10-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/25/permutation-seq/" itemprop="url">
-              
-                <span itemprop="name">permutation_seq</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-25T10:52:23-07:00"
-              content="2017-09-25" >
-          09-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/18/Group-anagrams/" itemprop="url">
-              
-                <span itemprop="name">Group_anagrams</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-18T15:48:06-07:00"
-              content="2017-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/18/permutation/" itemprop="url">
-              
-                <span itemprop="name">permutation</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-18T12:10:18-07:00"
-              content="2017-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/17/Jump_Game_II/" itemprop="url">
-              
-                <span itemprop="name">Jump_Game_II</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-17T11:26:30-07:00"
-              content="2017-09-17" >
-          09-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/16/regular-expression-matching/" itemprop="url">
-              
-                <span itemprop="name">regular expression matching</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-16T22:26:37-07:00"
-              content="2017-09-16" >
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/13/dynamic-programming/" itemprop="url">
-              
-                <span itemprop="name">dynamic programming</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-13T12:22:30-07:00"
-              content="2017-09-13" >
-          09-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -648,6 +392,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -834,11 +582,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

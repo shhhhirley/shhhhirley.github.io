@@ -256,6 +256,278 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/04/leetcode-32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/04/leetcode-32/" itemprop="url">leetcode-32</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T11:56:08-07:00">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I spent very long time in this problem and trapeed in a wrong idea for hours. At last, I read other’s solution and learnt that the code is very concise. I was not sure how to process the situation where the left parentheses are more than right ones. If I solved this problem by splitting the string by left parenthesis, another mistake will apear when the right parenthesis is in front of left one. Finally, I wrote very long code without balancing these two problems. </p>
+<p>The rightful dealing with left parenthesis more than right ones should not be splitting by left column, but only mark the position of the first left parenthesis after poping. There are three situations: </p>
+<ol>
+<li>‘(‘ : just push into the stack</li>
+<li>‘)’ : If the stack is empty, change the start position to the one right to the current position. Otherwise, pop, if the stack is not empty yet, longest string should be current position minus the position at top of the stack. Otherwise, longest string is current postion minus start position plus 1.</li>
+</ol>
+<pre><code>public class longesrValidParentheses {
+    public static int longest(String s)
+    {
+        Stack&lt;Integer&gt; st = new Stack&lt;&gt;();
+        int start = 0;
+        int max = 0;
+        for(int i = 0; i &lt; s.length(); i++)
+        {
+            if(s.charAt(i) == &apos;(&apos;)
+                st.push(i);
+            else{
+                if(st.isEmpty())
+                {
+                    start = i + 1;
+                }
+                else {
+                    st.pop();
+                    if(!st.isEmpty())
+                    {
+                        max = Math.max(i-st.peek(),max);
+                    }
+                    else 
+                    {
+                        max = Math.max(i-start+1, max);
+                    }
+                }
+            }
+
+        }
+        return max;
+    }
+    }
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/02/leetcode-29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/02/leetcode-29/" itemprop="url">leetcode-29</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-02T11:00:35-07:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Request：</p>
+<p>Divide two integers without using multiplication, divisor and mod operator. If it is overflow, return MAX_INT.</p>
+<p>An idea came to my mind that I should use bit operation, but I am not sure how to use it, and I haven’t used bit operation in programming before. Besides, I am not familiar with solving overflow problems. I should have more practices on this kind of problems. </p>
+<p>After reading blogs in C++, I learnt the idea that for a dividend, it must be between the interval of $2^k$ and $2^{(k+1)}$. This interval might be a very large interval with the increase of k that there are many other feasible solutions between them. So we need to add a loop to include these solutions after we determine what k is. </p>
+<p>The function given by leetcode has args of int type, so the args themselves cannot overflow, only after the operation, overflow might occur. Thus, there are only two cases we should consider of, that is, when dividend is MIN_VALUE and divisor is -1, since the absolute value of MAX_VALUE is 1 less than that of MIN_VALUE. Or we could check overflow when the result(long type) is determined. The accepted code is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int divide(int dividend, int divisor) &#123;</div><div class="line">        long m = Math.abs((long)dividend);</div><div class="line">		long n = Math.abs((long)divisor);</div><div class="line">		int sign = ((dividend&lt;0)^(divisor&lt;0))?-1:1;</div><div class="line">		long res = 0;</div><div class="line">		</div><div class="line">		while(m &gt;= n)</div><div class="line">		&#123;</div><div class="line">			long temp = n;</div><div class="line">			long count = 1;</div><div class="line">			while(m &gt;= (temp&lt;&lt;1))</div><div class="line">			&#123;</div><div class="line">				temp &lt;&lt;= 1;</div><div class="line">				count &lt;&lt;= 1;</div><div class="line">			&#125;</div><div class="line">			res += count;</div><div class="line">			m -= temp;</div><div class="line">		&#125;</div><div class="line">        res = (sign == 1)?res:-res;</div><div class="line">		if(res &gt; Integer.MAX_VALUE || res &lt; Integer.MIN_VALUE) return Integer.MAX_VALUE;	</div><div class="line">		    return (int)res;</div><div class="line">		</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/08/31/leetcode-25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -754,7 +1026,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
