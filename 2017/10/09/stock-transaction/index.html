@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="Leetcode 123 My solution: Dynammic programming but with $$$O(n^2)$$$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.lengt">
+<meta name="description" content="Leetcode 123 My solution: Dynammic programming but with $O(n^2)$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.length ==">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stock transaction">
 <meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/09/stock-transaction/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
-<meta property="og:description" content="Leetcode 123 My solution: Dynammic programming but with $$$O(n^2)$$$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.lengt">
-<meta property="og:updated_time" content="2017-10-10T06:15:07.000Z">
+<meta property="og:description" content="Leetcode 123 My solution: Dynammic programming but with $O(n^2)$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.length ==">
+<meta property="og:updated_time" content="2017-10-17T00:45:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="stock transaction">
-<meta name="twitter:description" content="Leetcode 123 My solution: Dynammic programming but with $$$O(n^2)$$$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.lengt">
+<meta name="twitter:description" content="Leetcode 123 My solution: Dynammic programming but with $O(n^2)$ complexity. 1234567891011121314151617181920212223242526272829303132public int maxProfit(int[] prices) &amp;#123;        if(prices.length ==">
 
 
 
@@ -320,11 +320,17 @@
 
       
         <p>Leetcode 123</p>
-<p>My solution: Dynammic programming but with $$$O(n^2)$$$ complexity.</p>
+<p>My solution: Dynammic programming but with $O(n^2)$ complexity.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">public int maxProfit(int[] prices) &#123;</div><div class="line">        if(prices.length == 0)</div><div class="line">            return 0;</div><div class="line">        int profit[][] = new int[prices.length][prices.length];</div><div class="line">        int max = 0;</div><div class="line">        int max_val = max_pro(prices);</div><div class="line">       </div><div class="line">        for(int i = 1; i &lt; prices.length-1; i++)</div><div class="line">        &#123;</div><div class="line">            for(int j = 0; j &lt; prices.length-i; j++)</div><div class="line">            &#123;</div><div class="line">               profit[j][j+i] = Math.max(Math.max(profit[j+1][j+i],profit[j][j+i-1]),prices[j+i]-prices[j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(int i = 1; i &lt; prices.length; i++)</div><div class="line">            max = Math.max(profit[0][i] + profit[i][prices.length-1], max);</div><div class="line">        max = Math.max(max, max_val);</div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">public int max_pro(int[] prices) &#123;</div><div class="line">        Stack&lt;Integer&gt; s = new Stack();</div><div class="line">        int max = 0;</div><div class="line">        for(int i = 0; i &lt; prices.length; i++)</div><div class="line">        &#123;</div><div class="line">            </div><div class="line">            if(s.isEmpty() || !s.isEmpty() &amp;&amp; prices[i] &lt; s.peek())</div><div class="line">                s.push(prices[i]);</div><div class="line">            else max = (max&lt;prices[i]-s.peek())?prices[i]-s.peek():max;</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>Smart solution:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int maxProfit(int[] prices) &#123;</div><div class="line">        int buy1 = Integer.MIN_VALUE, sell1 = 0, buy2 = Integer.MIN_VALUE, sell2 = 0;</div><div class="line">        for(int i = 0; i &lt; prices.length; i++)</div><div class="line">        &#123;</div><div class="line">            buy1 = Math.max(buy1, -prices[i]);</div><div class="line">            sell1 = Math.max(sell1, buy1+prices[i]);</div><div class="line">            buy2 = Math.max(sell1-prices[i],buy2);</div><div class="line">            sell2 = Math.max(buy2+prices[i], sell2);</div><div class="line">        &#125;</div><div class="line">        return sell2;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
       
     </div>
 
