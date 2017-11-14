@@ -256,6 +256,123 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/14/11-14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/14/11-14/" itemprop="url">11.14</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-14T12:55:08-08:00">
+                2017-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Another tricky problem: Sliding Window Maximum.<br>Popular solution: use deque. Deque is a data structure implementing both queue and stack… Amazing!!</p>
+<p>The code is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int[] maxSlidingWindow(int[] nums, int k) &#123;</div><div class="line">        if(nums.length == 0)</div><div class="line">            return new int[0];</div><div class="line">        int max[] = new int[nums.length-k+1];</div><div class="line">        </div><div class="line">        Deque&lt;Integer&gt; deque = new LinkedList&lt;&gt;();</div><div class="line">        int index = 0;</div><div class="line">        for(int i = 0; i &lt; nums.length; i++)</div><div class="line">        &#123;</div><div class="line">            while(!deque.isEmpty() &amp;&amp; deque.peek()&lt;i-k+1)</div><div class="line">                deque.poll();</div><div class="line">            while(!deque.isEmpty() &amp;&amp; nums[deque.peekLast()] &lt; nums[i])</div><div class="line">                deque.pollLast();</div><div class="line">            deque.add(i);</div><div class="line">            if(i &gt;= k-1)</div><div class="line">                max[index++] = nums[deque.peek()];</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Another solution:<br>Smart O(n) solution:<br>Split the arrays into seperate intervals, each with a window size of k.<br>Keep two arrays left_max and right_max:<br>The maximum value starting from left end in a window and the<br>maximum value starting from right end in a window.<br>Take the max value at position i between its leftmax(nums.length-i-1) and rightmax(i). This idea is hard to come up with and hard to explain.</p>
+<p>The code is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int[] maxSlidingWindow(int[] nums, int k) &#123;</div><div class="line">        if(nums.length == 0)</div><div class="line">            return new int[0];</div><div class="line">        int max[] = new int[nums.length-k+1];</div><div class="line">        </div><div class="line">        int leftmax[] = new int[nums.length];</div><div class="line">        int rightmax[] = new int[nums.length];</div><div class="line">        rightmax[nums.length-1] = nums[nums.length-1];</div><div class="line">        leftmax[0] = nums[0];</div><div class="line">        for(int i = 1; i &lt; nums.length; i++)</div><div class="line">        &#123;</div><div class="line">            leftmax[i] = (i%k == 0)?nums[i]:Math.max(nums[i],leftmax[i-1]);</div><div class="line">            int j = nums.length-i-1;</div><div class="line">            //System.out.println(i+&quot; &quot;+j);</div><div class="line">            rightmax[j] = ((j+1)%k == 0)?nums[j]:Math.max(nums[j],rightmax[j+1]);</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        for(int i = 0; i+k &lt;= nums.length; i++)</div><div class="line">            max[i] = Math.max(rightmax[i], leftmax[i+k-1]);</div><div class="line">        </div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/10/2017-11-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1318,125 +1435,6 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/17/Jump_Game_II/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/Jump_Game_II/" itemprop="url">Jump_Game_II</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-17T11:26:30-07:00">
-                2017-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>开始没有用动规，用递归，超时。<br>后来用递归数组存目前最小步数，复杂度$O(n^2)$,最后一个测试还是超时。<br>最后只需要遍历一遍，记录最大覆盖范围。复杂度$O(n)$</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int jump(int[] nums) &#123;</div><div class="line">    //递归TLE，通过测试71/92,动规使用dp数组记录到达当前位置的最小步数，复杂度 O(n^2),还是TLE，通过测试91/92。</div><div class="line">    //只能动规记录reach范围，用一个整数记录步数。复杂度O(n)</div><div class="line">        int step = 0;</div><div class="line">        int cover = 0;</div><div class="line">        int cur = 0;</div><div class="line">        for(int i = 0; i &lt; nums.length; i++)</div><div class="line">        &#123;</div><div class="line">            if(cover &lt; i)</div><div class="line">            &#123;</div><div class="line">                step++;</div><div class="line">                cover = cur;</div><div class="line">            &#125;</div><div class="line">            cur = Math.max(cur,nums[i]+i);</div><div class="line">        &#125;</div><div class="line">        return step;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1486,7 +1484,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
