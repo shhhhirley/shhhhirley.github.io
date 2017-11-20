@@ -256,6 +256,118 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/20/11-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/11-2/" itemprop="url">11.2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T11:53:46-08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Longest-Substring-with-At-Most-K-Distinct-Characters"><a href="#Longest-Substring-with-At-Most-K-Distinct-Characters" class="headerlink" title="Longest Substring with At Most K Distinct Characters"></a>Longest Substring with At Most K Distinct Characters</h3><p>Similar problem with Minimum Window Substring!<br>Keep two pointers, and a count array to count the times of occurrence of each character. Different point is this problem asks us to find the maximum substring of length at most k, which allows repeating of each character. I used two for loops, which of course would cause time limit exceeding. The smart idea–sliding window is to be mastered!!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public int lengthOfLongestSubstringKDistinct(String s, int k) &#123;</div><div class="line">        int num = 0;</div><div class="line">        int max = 0;</div><div class="line">        int cnt[] = new int[256];</div><div class="line">        int j = 0;</div><div class="line">        for(int i = 0; i &lt; s.length(); i++)</div><div class="line">        &#123;</div><div class="line">            if(cnt[s.charAt(i)]++ == 0)</div><div class="line">                num++;</div><div class="line">            if(num &gt; k)</div><div class="line">            &#123;</div><div class="line">                while(--cnt[s.charAt(j++)] &gt; 0);</div><div class="line">                num--;</div><div class="line">            &#125;</div><div class="line">            max = Math.max(max, i-j+1);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/15/11-15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1280,124 +1392,11 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/18/Group-anagrams/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/18/Group-anagrams/" itemprop="url">Group_anagrams</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T15:48:06-07:00">
-                2017-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>The idea is straigtforward: Sort the string to get the same sequence for all anagrams, use the same sequence as keyValue in a Map, and get all lists of anagrams as map Value.</p>
-<p>But this reminds me of not using arrays as Key in the Map. Arrays of same values are different keys in the Map since equals() for array compares if the two objects of arrays are the same instead of the values in arrays. Transferring the String to charArray needs str.toCharArray(), transferring the charArray needs to use String.valueOf(char).</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) &#123;</div><div class="line">        List&lt;List&lt;String&gt;&gt; res = new ArrayList&lt;&gt;();</div><div class="line">        HashMap&lt;String, List&lt;String&gt;&gt;map = new HashMap&lt;&gt;();</div><div class="line">        List&lt;String&gt; ls = new ArrayList&lt;&gt;();</div><div class="line">        for(int i = 0; i &lt; strs.length; i++)</div><div class="line">        &#123;</div><div class="line">            char[] c = strs[i].toCharArray();</div><div class="line">            Arrays.sort(c);</div><div class="line">            String s = String.valueOf(c);</div><div class="line">            if(!map.containsKey(s)) </div><div class="line">                map.put(s, new ArrayList&lt;&gt;());</div><div class="line">            map.get(s).add(strs[i]);</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        return new ArrayList&lt;List&lt;String&gt;&gt;(map.values());</div><div class="line">        </div><div class="line">           </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1442,7 +1441,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
