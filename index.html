@@ -256,146 +256,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/21/approximation_algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/21/approximation_algorithm/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T13:16:04-08:00">
-                2017-11-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Approximation-Algorithm"><a href="#Approximation-Algorithm" class="headerlink" title="Approximation Algorithm"></a>Approximation Algorithm</h2><h3 id="TSP"><a href="#TSP" class="headerlink" title="TSP"></a>TSP</h3><p>Tour approximation: </p>
-<p>Based on triangle inequality,<br>Starting from a MST, reduce the cost &lt;= 2<em>cost of MST &lt;= 2</em>cost of TSP.<br>This is a 2-approximation.</p>
-<p>Without triangle inequality, reduce to Hamiltonian cycle.</p>
-<h3 id="Load-Balancing-Problem"><a href="#Load-Balancing-Problem" class="headerlink" title="Load Balancing Problem"></a>Load Balancing Problem</h3><ol>
-<li>m resourses with equal processing power.</li>
-<li>n jobs where job j takes load $$$t_j$$$ to process.</li>
-</ol>
-<p>Assign jobs to resources such that the jobs to finish as fast as possible.</p>
-<p>Greedy:<br>assign jobs to the resource with lightest load.</p>
-<p>$$$ T &gt;= 1/m\sum_{j}{t_j} $$$</p>
-<p>$$$ T &gt;= \max_j{t_j}$$$</p>
-<p>This is a 2-approximation.</p>
-<p>If Initially sort jobs in decreasing order, and adopt same greedy algorithm. Then this is a 1.5-approximation.</p>
-<h3 id="MAX-3SAT"><a href="#MAX-3SAT" class="headerlink" title="MAX-3SAT"></a>MAX-3SAT</h3><p>NPH </p>
-<p>0.5-approximation alg.</p>
-<p>Set everything to truth, if half of the clauses are true. done<br>Otherwise, set everything to false. done</p>
-<h3 id="Vertex-cover-problem"><a href="#Vertex-cover-problem" class="headerlink" title="Vertex cover problem"></a>Vertex cover problem</h3><p>2-approximation alg. </p>
-<p>While there is an edge not covered: Put both of the two ends into the cover.</p>
-<p>Independent set: cannot be reduced from vertex cover.</p>
-<h2 id="Linear-Programming"><a href="#Linear-Programming" class="headerlink" title="Linear Programming"></a>Linear Programming</h2><p>Linear equation AX = B</p>
-<p>Linear programmig AX &gt;= B</p>
-<p>Objective function: $$$C^TX$$$(to minimize)</p>
-<p>Reduce a problem in linear programming ????</p>
-<p>weighted vertex cover problem: NPH</p>
-<p>$$$x_i$$$ is a decidable variable for each node $$$i \in V$$$<br>0 if not in V, 1 if in V</p>
-<p>minimize $$$\sum{w_i*x_i}$$$</p>
-<p>subject to: $$$x_i+x_j &gt;= 1, x_i\in{0,1}$$$ </p>
-<p>discrete!! not linear programming!! This is Integer programming</p>
-<p>So how to solve a problem approximately using linear programming??</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/20/11-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1420,6 +1280,118 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/25/permutation-seq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/25/permutation-seq/" itemprop="url">permutation_seq</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T10:52:23-07:00">
+                2017-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This problem puzzled me a lot… Not good at finding the rule of numbers and realize it in programs… Very tricky and smart code!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public String getPermutation(int n, int k) &#123;</div><div class="line">    if(n&lt;=0)</div><div class="line">        return &quot;&quot;;</div><div class="line">    k--;</div><div class="line">    StringBuilder res = new StringBuilder();</div><div class="line">    int factorial = 1;</div><div class="line">    ArrayList&lt;Integer&gt; nums = new ArrayList&lt;Integer&gt;();</div><div class="line">    for(int i=2;i&lt;n;i++)</div><div class="line">    &#123;</div><div class="line">        factorial *= i;</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=n;i++)</div><div class="line">    &#123;</div><div class="line">        nums.add(i);</div><div class="line">    &#125;</div><div class="line">    int round = n-1;</div><div class="line">    while(round&gt;=0)</div><div class="line">    &#123;</div><div class="line">        int index = k/factorial;</div><div class="line">        k %= factorial;</div><div class="line">        res.append(nums.get(index));</div><div class="line">        nums.remove(index);</div><div class="line">        if(round&gt;0)</div><div class="line">            factorial /= round;</div><div class="line">        round--;</div><div class="line">    &#125;</div><div class="line">    return res.toString();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1469,7 +1441,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
