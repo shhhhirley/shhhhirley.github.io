@@ -100,7 +100,7 @@
 <meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/21/deep-learning/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
 <meta property="og:description" content="看了231n CNN应用： Object Detection and Localization.我所理解的RNN和CNN应用不同的地方在与是否有连续性输入。连续性输入指的是视频的每一帧或者一串字符串的每一个字符。前一输出加后面输入一同放入neural net继续学习，从而得到后面的输出，这是RNN干的事情。而Object Detection是处理一张照片中的Object分类。一种简单的想法是用一个">
-<meta property="og:updated_time" content="2018-01-22T00:13:55.000Z">
+<meta property="og:updated_time" content="2018-01-22T00:18:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deep_learning">
 <meta name="twitter:description" content="看了231n CNN应用： Object Detection and Localization.我所理解的RNN和CNN应用不同的地方在与是否有连续性输入。连续性输入指的是视频的每一帧或者一串字符串的每一个字符。前一输出加后面输入一同放入neural net继续学习，从而得到后面的输出，这是RNN干的事情。而Object Detection是处理一张照片中的Object分类。一种简单的想法是用一个">
@@ -320,7 +320,7 @@
       
 
       
-        <p>看了231n CNN应用： Object Detection and Localization.<br>我所理解的RNN和CNN应用不同的地方在与是否有连续性输入。连续性输入指的是视频的每一帧或者一串字符串的每一个字符。前一输出加后面输入一同放入neural net继续学习，从而得到后面的输出，这是RNN干的事情。而Object Detection是处理一张照片中的Object分类。一种简单的想法是用一个sliding window，随着sliding window的移动，我们用neural nets判断出这个window中的object是什么类型。比如是猫还是狗，或者是背景。如果是背景，证明这一部分没有object，否则可以将object正确分类。但是这种方法的问题在于：如何确定sliding window的位置，如果用Bruteforce获取，计算量太大。于是有人提出了RCNN的方法，但是RCNN也存在过慢的问题，因此又有人提出了改进–faster RCNN。 </p>
+        <p>看了231n CNN应用： Object Detection and Localization.<br>我所理解的RNN和CNN应用不同的地方在与是否有连续性输入。连续性输入指的是视频的每一帧或者一串字符串的每一个字符。前一输出加后面输入一同放入neural net继续学习，从而得到后面的输出，这是RNN干的事情。而Object Detection是处理一张照片中的Object分类。一种简单的想法是用一个sliding window，随着sliding window的移动，我们用neural nets判断出这个window中的object是什么类型。比如是猫还是狗，或者是背景。如果是背景，证明这一部分没有object，否则可以将object正确分类。但是这种方法的问题在于：如何确定sliding window的位置，如果用Bruteforce获取，计算量太大。于是有人提出了RCNN的方法，但是RCNN也存在过慢的问题，因此又有人提出了改进–Fast RCNN。 </p>
 
       
     </div>
