@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CNN," />
 
 
 
@@ -93,15 +93,17 @@
 
 
 
-<meta name="description" content="Shirley Wang&apos;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shirley&#39;s Blog">
-<meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/tags/unique-binary-search-tree/index.html">
+<meta name="description" content="$$$Convolution:$$$The primary purpose of Convolution in case of ConvNet is to extract features from the input image. Different values of the filter matrix will produce different effect of convolution.">
+<meta name="keywords" content="CNN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="neural nets">
+<meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/24/neural-nets/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
-<meta property="og:description" content="Shirley Wang&apos;s blog">
+<meta property="og:description" content="$$$Convolution:$$$The primary purpose of Convolution in case of ConvNet is to extract features from the input image. Different values of the filter matrix will produce different effect of convolution.">
+<meta property="og:updated_time" content="2018-01-24T18:22:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shirley&#39;s Blog">
-<meta name="twitter:description" content="Shirley Wang&apos;s blog">
+<meta name="twitter:title" content="neural nets">
+<meta name="twitter:description" content="$$$Convolution:$$$The primary purpose of Convolution in case of ConvNet is to extract features from the input image. Different values of the filter matrix will produce different effect of convolution.">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/zhchnchn/zhchnchn.github.io.git/tags/unique-binary-search-tree/"/>
+  <link rel="canonical" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/24/neural-nets/"/>
 
 
 
 
 
-  <title>Tag: unique binary search tree | Shirley's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>neural nets | Shirley's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -160,7 +162,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,44 +246,158 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>unique binary search tree<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/24/neural-nets/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">neural nets</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T10:22:02-08:00">
+                2018-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>$$$Convolution:$$$<br>The primary purpose of Convolution in case of ConvNet is to extract features from the input image. Different values of the filter matrix will produce different effect of convolution. It also captures local dependencies in the original image. In practice, a CNN learns calues of the filters on its own during the training process. The more number of filters we have, the more image features get etracted and the better our network becomes at recognizing patterns in unseen images.</p>
+<p>$$$Relu:$$$<br>Relu could be used after every convolution operation. The purpose of Relu is to introduce non-linearity in ConvNet, since most of the real-world data would be non-linear.</p>
+<p>$$$Pooling:$$$<br>Pooling reduces the dimensionality of each feature map but retains the most important information.  </p>
+<ol>
+<li>Pooling makes the input representations smaller and more manageable.  </li>
+<li>reduces the number of parameters and computations in the network, therefore, controlling overfitting.  </li>
+<li>makes the network invariant to smaller transformations, distortions and translations in the input image.  </li>
+<li>helps us arrive at an almost scale invariant representation of our image. </li>
+</ol>
+<p>$$$Fully Connected Layer:$$$<br>FC layer is a traditional multi-layer perceptron that uses a softmax/svm classifier in the output layer. The term “fully connected” implies that every neuron in the previous layer is connected to every neuron on the next layer.</p>
+<p>Reference:<br><a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" target="_blank" rel="external">https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/</a></p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/10/08/lc-96/" itemprop="url">
-              
-                <span itemprop="name">lc 96</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-08T16:44:05-07:00"
-              content="2017-10-08" >
-          10-08
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CNN/" rel="tag"># CNN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/22/cs231n-CNN/" rel="next" title="CNN Models">
+                <i class="fa fa-chevron-left"></i> CNN Models
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -289,6 +405,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -475,10 +595,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 

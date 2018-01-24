@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="unique binary search tree," />
+  <meta name="keywords" content="Stanford CS231n," />
 
 
 
@@ -93,17 +93,20 @@
 
 
 
-<meta name="description" content="被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[">
-<meta name="keywords" content="unique binary search tree">
+<meta name="description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were 55 stride 1. Sampling(pooling) layers were 2\2 stride 2 AlexNet: deeper and much wider version of LeNet and won by a large">
+<meta name="keywords" content="Stanford CS231n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lc 96">
-<meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-96/index.html">
+<meta property="og:title" content="CNN Models">
+<meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
-<meta property="og:description" content="被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[">
-<meta property="og:updated_time" content="2017-10-08T23:53:19.000Z">
+<meta property="og:description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were 55 stride 1. Sampling(pooling) layers were 2\2 stride 2 AlexNet: deeper and much wider version of LeNet and won by a large">
+<meta property="og:image" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/resnet.png">
+<meta property="og:image" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/resnet_full.png">
+<meta property="og:updated_time" content="2018-01-24T19:59:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lc 96">
-<meta name="twitter:description" content="被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。 1234567891011121314class Solution &amp;#123;    public int numTrees(int n) &amp;#123;        int[] num = new int[">
+<meta name="twitter:title" content="CNN Models">
+<meta name="twitter:description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were 55 stride 1. Sampling(pooling) layers were 2\2 stride 2 AlexNet: deeper and much wider version of LeNet and won by a large">
+<meta name="twitter:image" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/resnet.png">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-96/"/>
+  <link rel="canonical" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/"/>
 
 
 
 
 
-  <title>lc 96 | Shirley's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>CNN Models | Shirley's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -256,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-96/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shirley Wang">
@@ -273,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">lc 96</h1>
+          <h1 class="post-title" itemprop="name headline">CNN Models</h1>
         
 
         <div class="post-meta">
@@ -285,8 +288,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T16:44:05-07:00">
-                2017-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-22T12:08:16-08:00">
+                2018-01-22
               </time>
             
 
@@ -320,8 +323,24 @@
       
 
       
-        <p>被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。<br>以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numTrees(int n) &#123;</div><div class="line">        int[] num = new int[n+1];</div><div class="line">        num[0] = 1;//空树</div><div class="line">        num[1] = 1;//一个节点</div><div class="line">        for(int i = 2; i &lt;= n; i++)</div><div class="line">        &#123;</div><div class="line">            for(int j = 0; j &lt; i; j++)</div><div class="line">                num[i] += num[j]*num[i-1-j];//以j+1为root的树的个数</div><div class="line">        &#125;</div><div class="line">        return num[n];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>CNN Architecture：<br>LeNet, ALEX, VGG, GOOGLENET, RESNET</p>
+<p><b>LeNet</b>: Conv filter were 5<em>5 stride 1. Sampling(pooling) layers were 2\</em>2 stride 2</p>
+<p><b>AlexNet</b>: deeper and much wider version of LeNet and won by a large margin the difficult ImageNet Large Scale Visual Recognition Challenge in 2012.<br>CONV1, 96 11<em>11 filters at stride 4, pad 0<br>MAX POOLING 1,  3\</em>3 filters at stride 2<br>NORM 1, normalization layer(not batchnorm)<br>CONV2, 256 5*5 filters at stride 1, pad 2<br>MAX POOLING 2,  3*3 filters at stride 2<br>NORM2, normalization layer<br>CONV3, 384 3*3 filters at stride 1, pad1<br>CONV4, 384 3*3 filters at srtide 1, pad1<br>CONV5, 256 3*3 filters at stride 1, pad1<br>MAX POOLING 3*3 filters at stride 1, pad1<br>FC6, 4096 neurons<br>FC7, 4096 neurons<br>FC8, 1000 neurons<br>Total number of parameters:<br>filter size* number of filters * depth of images<br>(pooling layer has no parameters ) </p>
+<p>AlexNet Other properties:<br>-first use of ReLU<br>-used norm layers(not used anymore)<br>-heavy data augmentation(flipping, jittering, cropping, useful)<br>-dropout 0.5<br>-batchsize 0.5<br>-sgd momentum: 0.9<br>-learning-rate 0.0., reduce by 10<br>-L2 weight decay 5e-4<br>-7 CNN ensemble: 18.2%-&gt;15.4%</p>
+<p>Typical architecture of CNN is:<br>[(CONV-&gt;ReLu)<em>M-&gt;POOL]\</em>N-&gt;FC*K-&gt;SOFTMAX</p>
+<p>——————————— Typical &amp; Recent Advance————————-          </p>
+<p><b>GoogleNet</b>: ILSVRC 2014 winner. 22 layers. Its main contribution was the development of an Inception Module that dramatically reduced the number of parameters in the network. No FC layers. $$$12\times$$$ less than AlexNet.<br>Naive Inception module: apply parallel filter operations on the input from previous layer. Get multiple receptive field sizes(according to number of filters used) for convolution($$$1\times1, 3\times3, 5\times5$$$), then concatenate all filter outputs together depth-wise. This is very expensive computation.<br>Solution: “bottleneck” layers that use $$$1\times1$$$ convolutions to reduce feature depth. Input-&gt;$$$1\times1$$$conv to perform dimension reduction. Total number of product operation is reduced from 854M ops to 358M ops on $$$28\times28\times256$$$input on the above different scale filters. </p>
+<p><b>VGGNet</b>: Smaller filters, deeper networks. Deeper networks: 8 layers(AlexNet) to 16-19 layers(VGG16Net and VGG19Net). Use ensembles for best results. Smaller filters: Only $$$3\times3$$$ CONV stride 1, pad 1, and $$$2\times2$$$ MAX POOL stride 2. Recpetive field(total spatial area of the input) of $$$7\times7$$$ stride 1 conv layer is the same as 3 $$$3\times3$$$ conv layers, but more layers, thus more non-linearities, and fewer parameters. </p>
+<p>Is CNN really the deeper, the better? No. 56-layer model performs worse on both training and test error, so the deeper model performs worse, but it’s not caused by overfitting. Hypothesis: the problem is an optimization problem, deeper models are harder to optimize.<br>Solution: Use network layers to fit a residual mapping instead of directly trying to fit a desired underlying mapping, and this leads to the idea of ResNet.<br><img src="resnet.png" width="400px"><br><b>ResNet</b>: ResNet is a very deep networks using residual connections. It is 152-layer model for ImageNet. Residual Network was the winner of ILSVRC’15. ResNet are currently state of the art CNN models and the default choice for using ConvNets in practice.<br>Full ResNet Architecture:  </p>
+<ol>
+<li>Stack residual blocks </li>
+<li>Every residual block has two $$$3\times3$$$ conv layers.  </li>
+<li>Periodically, double number of filters and downsample spatially using stride2.</li>
+<li>Additional conv layer at the beginning. </li>
+<li>No FC layers at the end(only FC1000 to output classes).<br><img src="resnet_full.png" width="600px"></li>
+</ol>
+<p><i>Reference</i>: Stanford CS231n </p>
+
       
     </div>
 
@@ -350,7 +369,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/unique-binary-search-tree/" rel="tag"># unique binary search tree</a>
+            <a href="/tags/Stanford-CS231n/" rel="tag"># Stanford CS231n</a>
           
         </div>
       
@@ -363,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/lc-84/" rel="next" title="lc 84">
-                <i class="fa fa-chevron-left"></i> lc 84
+              <a href="/2017/11/20/11-2/" rel="next" title="11.2">
+                <i class="fa fa-chevron-left"></i> 11.2
               </a>
             
           </div>
@@ -373,8 +392,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/08/lc-95/" rel="prev" title="lc_95">
-                lc_95 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/24/neural-nets/" rel="prev" title="neural nets">
+                neural nets <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

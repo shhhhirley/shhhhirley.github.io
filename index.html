@@ -256,6 +256,256 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/24/neural-nets/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/24/neural-nets/" itemprop="url">neural nets</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T10:22:02-08:00">
+                2018-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>$$$Convolution:$$$<br>The primary purpose of Convolution in case of ConvNet is to extract features from the input image. Different values of the filter matrix will produce different effect of convolution. It also captures local dependencies in the original image. In practice, a CNN learns calues of the filters on its own during the training process. The more number of filters we have, the more image features get etracted and the better our network becomes at recognizing patterns in unseen images.</p>
+<p>$$$Relu:$$$<br>Relu could be used after every convolution operation. The purpose of Relu is to introduce non-linearity in ConvNet, since most of the real-world data would be non-linear.</p>
+<p>$$$Pooling:$$$<br>Pooling reduces the dimensionality of each feature map but retains the most important information.  </p>
+<ol>
+<li>Pooling makes the input representations smaller and more manageable.  </li>
+<li>reduces the number of parameters and computations in the network, therefore, controlling overfitting.  </li>
+<li>makes the network invariant to smaller transformations, distortions and translations in the input image.  </li>
+<li>helps us arrive at an almost scale invariant representation of our image. </li>
+</ol>
+<p>$$$Fully Connected Layer:$$$<br>FC layer is a traditional multi-layer perceptron that uses a softmax/svm classifier in the output layer. The term “fully connected” implies that every neuron in the previous layer is connected to every neuron on the next layer.</p>
+<p>Reference:<br><a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" target="_blank" rel="external">https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/22/cs231n-CNN/" itemprop="url">CNN Models</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-22T12:08:16-08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>CNN Architecture：<br>LeNet, ALEX, VGG, GOOGLENET, RESNET</p>
+<p><b>LeNet</b>: Conv filter were 5<em>5 stride 1. Sampling(pooling) layers were 2\</em>2 stride 2</p>
+<p><b>AlexNet</b>: deeper and much wider version of LeNet and won by a large margin the difficult ImageNet Large Scale Visual Recognition Challenge in 2012.<br>CONV1, 96 11<em>11 filters at stride 4, pad 0<br>MAX POOLING 1,  3\</em>3 filters at stride 2<br>NORM 1, normalization layer(not batchnorm)<br>CONV2, 256 5*5 filters at stride 1, pad 2<br>MAX POOLING 2,  3*3 filters at stride 2<br>NORM2, normalization layer<br>CONV3, 384 3*3 filters at stride 1, pad1<br>CONV4, 384 3*3 filters at srtide 1, pad1<br>CONV5, 256 3*3 filters at stride 1, pad1<br>MAX POOLING 3*3 filters at stride 1, pad1<br>FC6, 4096 neurons<br>FC7, 4096 neurons<br>FC8, 1000 neurons<br>Total number of parameters:<br>filter size* number of filters * depth of images<br>(pooling layer has no parameters ) </p>
+<p>AlexNet Other properties:<br>-first use of ReLU<br>-used norm layers(not used anymore)<br>-heavy data augmentation(flipping, jittering, cropping, useful)<br>-dropout 0.5<br>-batchsize 0.5<br>-sgd momentum: 0.9<br>-learning-rate 0.0., reduce by 10<br>-L2 weight decay 5e-4<br>-7 CNN ensemble: 18.2%-&gt;15.4%</p>
+<p>Typical architecture of CNN is:<br>[(CONV-&gt;ReLu)<em>M-&gt;POOL]\</em>N-&gt;FC*K-&gt;SOFTMAX</p>
+<p>——————————— Typical &amp; Recent Advance————————-          </p>
+<p><b>GoogleNet</b>: ILSVRC 2014 winner. 22 layers. Its main contribution was the development of an Inception Module that dramatically reduced the number of parameters in the network. No FC layers. $$$12\times$$$ less than AlexNet.<br>Naive Inception module: apply parallel filter operations on the input from previous layer. Get multiple receptive field sizes(according to number of filters used) for convolution($$$1\times1, 3\times3, 5\times5$$$), then concatenate all filter outputs together depth-wise. This is very expensive computation.<br>Solution: “bottleneck” layers that use $$$1\times1$$$ convolutions to reduce feature depth. Input-&gt;$$$1\times1$$$conv to perform dimension reduction. Total number of product operation is reduced from 854M ops to 358M ops on $$$28\times28\times256$$$input on the above different scale filters. </p>
+<p><b>VGGNet</b>: Smaller filters, deeper networks. Deeper networks: 8 layers(AlexNet) to 16-19 layers(VGG16Net and VGG19Net). Use ensembles for best results. Smaller filters: Only $$$3\times3$$$ CONV stride 1, pad 1, and $$$2\times2$$$ MAX POOL stride 2. Recpetive field(total spatial area of the input) of $$$7\times7$$$ stride 1 conv layer is the same as 3 $$$3\times3$$$ conv layers, but more layers, thus more non-linearities, and fewer parameters. </p>
+<p>Is CNN really the deeper, the better? No. 56-layer model performs worse on both training and test error, so the deeper model performs worse, but it’s not caused by overfitting. Hypothesis: the problem is an optimization problem, deeper models are harder to optimize.<br>Solution: Use network layers to fit a residual mapping instead of directly trying to fit a desired underlying mapping, and this leads to the idea of ResNet.<br><img src="resnet.png" width="400px"><br><b>ResNet</b>: ResNet is a very deep networks using residual connections. It is 152-layer model for ImageNet. Residual Network was the winner of ILSVRC’15. ResNet are currently state of the art CNN models and the default choice for using ConvNets in practice.<br>Full ResNet Architecture:  </p>
+<ol>
+<li>Stack residual blocks </li>
+<li>Every residual block has two $$$3\times3$$$ conv layers.  </li>
+<li>Periodically, double number of filters and downsample spatially using stride2.</li>
+<li>Additional conv layer at the beginning. </li>
+<li>No FC layers at the end(only FC1000 to output classes).<br><img src="resnet_full.png" width="600px"></li>
+</ol>
+<p><i>Reference</i>: Stanford CS231n </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/11/20/11-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1165,233 +1415,6 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/08/lc-84/" itemprop="url">lc 84</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T11:59:29-07:00">
-                2017-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>全是套路！</p>
-<p>84: 给定一组数字，找最大的矩形。用stack可以实现复杂度O(n).关键点：扩充数组长度到n+1，赋值0.这样最后会把stack清空。每次pop找出的是以当前pop出的值为高度的最大矩形面积。</p>
-<p>85: 给定很多组数字。找出最大矩形。一行一行的找。如果是1，下面一行是前面几行的累加。如果是0，清空为0。</p>
-<p>只贴84的代码了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int largestRectangleArea(int[] heights) &#123;</div><div class="line">        Stack&lt;Integer&gt; s = new Stack&lt;&gt;();</div><div class="line">        int maxArea = 0;</div><div class="line">        int[] h = new int[heights.length+1];</div><div class="line">        for(int i = 0; i &lt;= heights.length; i++)</div><div class="line">        &#123;</div><div class="line">            if(i == heights.length)</div><div class="line">                h[i] = 0;</div><div class="line">            else </div><div class="line">                h[i] = heights[i];</div><div class="line">        &#125;</div><div class="line">        for(int i = 0; i &lt; h.length; i++)</div><div class="line">        &#123;</div><div class="line">            if(s.isEmpty() || h[i] &gt;= h[s.peek()])</div><div class="line">                s.push(i);</div><div class="line">            else if(h[i] &lt; h[s.peek()])</div><div class="line">            &#123;</div><div class="line">                int tp = s.pop();</div><div class="line">                maxArea = Math.max(maxArea,h[tp]*(s.isEmpty()?i:i-1-s.peek()));</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return maxArea;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/09/25/permutation-seq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/25/permutation-seq/" itemprop="url">permutation_seq</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T10:52:23-07:00">
-                2017-09-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>This problem puzzled me a lot… Not good at finding the rule of numbers and realize it in programs… Very tricky and smart code!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public String getPermutation(int n, int k) &#123;</div><div class="line">    if(n&lt;=0)</div><div class="line">        return &quot;&quot;;</div><div class="line">    k--;</div><div class="line">    StringBuilder res = new StringBuilder();</div><div class="line">    int factorial = 1;</div><div class="line">    ArrayList&lt;Integer&gt; nums = new ArrayList&lt;Integer&gt;();</div><div class="line">    for(int i=2;i&lt;n;i++)</div><div class="line">    &#123;</div><div class="line">        factorial *= i;</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=n;i++)</div><div class="line">    &#123;</div><div class="line">        nums.add(i);</div><div class="line">    &#125;</div><div class="line">    int round = n-1;</div><div class="line">    while(round&gt;=0)</div><div class="line">    &#123;</div><div class="line">        int index = k/factorial;</div><div class="line">        k %= factorial;</div><div class="line">        res.append(nums.get(index));</div><div class="line">        nums.remove(index);</div><div class="line">        if(round&gt;0)</div><div class="line">            factorial /= round;</div><div class="line">        round--;</div><div class="line">    &#125;</div><div class="line">    return res.toString();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1441,7 +1464,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1454,7 +1477,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>
