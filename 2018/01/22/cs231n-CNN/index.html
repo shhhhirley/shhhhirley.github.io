@@ -93,20 +93,20 @@
 
 
 
-<meta name="description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were $$5\times5$$ stride 1. Sampling(pooling) layers were $$2\times2$$ stride 2 AlexNet: deeper and much wider version of LeNet">
+<meta name="description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were $5\times5$ stride 1. Sampling(pooling) layers were $2\times2$ stride 2 AlexNet: deeper and much wider version of LeNet and">
 <meta name="keywords" content="Stanford CS231n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN Models">
 <meta property="og:url" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/index.html">
 <meta property="og:site_name" content="Shirley&#39;s Blog">
-<meta property="og:description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were $$5\times5$$ stride 1. Sampling(pooling) layers were $$2\times2$$ stride 2 AlexNet: deeper and much wider version of LeNet">
-<meta property="og:image" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/resnet.png">
-<meta property="og:image" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/resnet_full.png">
-<meta property="og:updated_time" content="2018-01-24T20:13:40.000Z">
+<meta property="og:description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were $5\times5$ stride 1. Sampling(pooling) layers were $2\times2$ stride 2 AlexNet: deeper and much wider version of LeNet and">
+<meta property="og:image" content="https://github.com/images/resnet.png">
+<meta property="og:image" content="https://github.com/images/resnet_full.png">
+<meta property="og:updated_time" content="2018-01-24T20:30:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN Models">
-<meta name="twitter:description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were $$5\times5$$ stride 1. Sampling(pooling) layers were $$2\times2$$ stride 2 AlexNet: deeper and much wider version of LeNet">
-<meta name="twitter:image" content="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/resnet.png">
+<meta name="twitter:description" content="CNN Architecture：LeNet, ALEX, VGG, GOOGLENET, RESNET LeNet: Conv filter were $5\times5$ stride 1. Sampling(pooling) layers were $2\times2$ stride 2 AlexNet: deeper and much wider version of LeNet and">
+<meta name="twitter:image" content="https://github.com/images/resnet.png">
 
 
 
@@ -324,20 +324,20 @@
 
       
         <p>CNN Architecture：<br>LeNet, ALEX, VGG, GOOGLENET, RESNET</p>
-<p><b>LeNet</b>: Conv filter were $$5\times5$$ stride 1. Sampling(pooling) layers were $$2\times2$$ stride 2</p>
-<p><b>AlexNet</b>: deeper and much wider version of LeNet and won by a large margin the difficult ImageNet Large Scale Visual Recognition Challenge in 2012.<br>CONV1, 96 $$11\times11$$ filters at stride 4, pad 0<br>MAX POOLING 1,  $$3\times3$$ filters at stride 2<br>NORM 1, normalization layer(not batchnorm)<br>CONV2, 256 $$5\times5$$ filters at stride 1, pad 2<br>MAX POOLING 2,  $$3\times3$$ filters at stride 2<br>NORM2, normalization layer<br>CONV3, 384 $$3\times3$$ filters at stride 1, pad1<br>CONV4, 384 $$3\times3$$ filters at srtide 1, pad1<br>CONV5, 256 $$3\times3$$ filters at stride 1, pad1<br>MAX POOLING $$3\times3$$ filters at stride 1, pad1<br>FC6, 4096 neurons<br>FC7, 4096 neurons<br>FC8, 1000 neurons<br>Total number of parameters:<br>filter size number of filters $$\times$$ depth of images<br>(pooling layer has no parameters ) </p>
+<p><b>LeNet</b>: Conv filter were $5\times5$ stride 1. Sampling(pooling) layers were $2\times2$ stride 2</p>
+<p><b>AlexNet</b>: deeper and much wider version of LeNet and won by a large margin the difficult ImageNet Large Scale Visual Recognition Challenge in 2012.<br>CONV1, 96 $11\times11$ filters at stride 4, pad 0<br>MAX POOLING 1,  $3\times3$ filters at stride 2<br>NORM 1, normalization layer(not batchnorm)<br>CONV2, 256 $5\times5$ filters at stride 1, pad 2<br>MAX POOLING 2,  $3\times3$ filters at stride 2<br>NORM2, normalization layer<br>CONV3, 384 $3\times3$ filters at stride 1, pad1<br>CONV4, 384 $3\times3$ filters at srtide 1, pad1<br>CONV5, 256 $3\times3$ filters at stride 1, pad1<br>MAX POOLING $3\times3$ filters at stride 1, pad1<br>FC6, 4096 neurons<br>FC7, 4096 neurons<br>FC8, 1000 neurons<br>Total number of parameters:<br>filter size number of filters $\times$ depth of images<br>(pooling layer has no parameters ) </p>
 <p>AlexNet Other properties:<br>-first use of ReLU<br>-used norm layers(not used anymore)<br>-heavy data augmentation(flipping, jittering, cropping, useful)<br>-dropout 0.5<br>-batchsize 0.5<br>-sgd momentum: 0.9<br>-learning-rate 0.0., reduce by 10<br>-L2 weight decay 5e-4<br>-7 CNN ensemble: 18.2%-&gt;15.4%</p>
-<p>Typical architecture of CNN is:<br>[(CONV-&gt;ReLu)<em>M-&gt;POOL]\</em>N-&gt;FC*K-&gt;SOFTMAX</p>
+<p>Typical architecture of CNN is:<br>[(CONV -&gt; ReLu)$\times$M -&gt; POOL]$\times$N -&gt; FC$\times$K -&gt; SOFTMAX</p>
 <p>——————————— Typical &amp; Recent Advance————————-          </p>
-<p><b>GoogleNet</b>: ILSVRC 2014 winner. 22 layers. Its main contribution was the development of an Inception Module that dramatically reduced the number of parameters in the network. No FC layers. $12\times$ less than AlexNet.<br>Naive Inception module: apply parallel filter operations on the input from previous layer. Get multiple receptive field sizes(according to number of filters used) for convolution($1\times1, 3\times3, 5\times5$), then concatenate all filter outputs together depth-wise. This is very expensive computation.<br>Solution: “bottleneck” layers that use $$1\times1$$ convolutions to reduce feature depth. Input-&gt;$$$1\times1$$$conv to perform dimension reduction. Total number of product operation is reduced from 854M ops to 358M ops on $$28\times28\times256$$ input on the above different scale filters. </p>
-<p><b>VGGNet</b>: Smaller filters, deeper networks. Deeper networks: 8 layers(AlexNet) to 16-19 layers(VGG16Net and VGG19Net). Use ensembles for best results. Smaller filters: Only $$$3\times3$$$ CONV stride 1, pad 1, and $$2\times2$$ MAX POOL stride 2. Recpetive field(total spatial area of the input) of $$7\times7$$ stride 1 conv layer is the same as 3 $$3\times3$$ conv layers, but more layers, thus more non-linearities, and fewer parameters. </p>
-<p>Is CNN really the deeper, the better? No. 56-layer model performs worse on both training and test error, so the deeper model performs worse, but it’s not caused by overfitting. Hypothesis: the problem is an optimization problem, deeper models are harder to optimize.<br>Solution: Use network layers to fit a residual mapping instead of directly trying to fit a desired underlying mapping, and this leads to the idea of ResNet.<br><img src="resnet.png" width="400px"><br><b>ResNet</b>: ResNet is a very deep networks using residual connections. It is 152-layer model for ImageNet. Residual Network was the winner of ILSVRC’15. ResNet are currently state of the art CNN models and the default choice for using ConvNets in practice.<br>Full ResNet Architecture:  </p>
+<p><b>GoogleNet</b>: ILSVRC 2014 winner. 22 layers. Its main contribution was the development of an Inception Module that dramatically reduced the number of parameters in the network. No FC layers. $12\times$ less than AlexNet.<br>Naive Inception module: apply parallel filter operations on the input from previous layer. Get multiple receptive field sizes(according to number of filters used) for convolution($1\times1, 3\times3, 5\times5$), then concatenate all filter outputs together depth-wise. This is very expensive computation.<br>Solution: “bottleneck” layers that use $1\times1$ convolutions to reduce feature depth. Input-&gt;$1\times1$conv to perform dimension reduction. Total number of product operation is reduced from 854M ops to 358M ops on $28\times28\times256$ input on the above different scale filters. </p>
+<p><b>VGGNet</b>: Smaller filters, deeper networks. Deeper networks: 8 layers(AlexNet) to 16-19 layers(VGG16Net and VGG19Net). Use ensembles for best results. Smaller filters: Only $3\times3$ CONV stride 1, pad 1, and $2\times2$ MAX POOL stride 2. Recpetive field(total spatial area of the input) of $7\times7$ stride 1 conv layer is the same as 3 $3\times3$ conv layers, but more layers, thus more non-linearities, and fewer parameters. </p>
+<p>Is CNN really the deeper, the better? No. 56-layer model performs worse on both training and test error, so the deeper model performs worse, but it’s not caused by overfitting. Hypothesis: the problem is an optimization problem, deeper models are harder to optimize.<br>Solution: Use network layers to fit a residual mapping instead of directly trying to fit a desired underlying mapping, and this leads to the idea of ResNet.<br><img src="/images/resnet.png" alt=""><br><b>ResNet</b>: ResNet is a very deep networks using residual connections. It is 152-layer model for ImageNet. Residual Network was the winner of ILSVRC’15. ResNet are currently state of the art CNN models and the default choice for using ConvNets in practice.<br>Full ResNet Architecture:  </p>
 <ol>
 <li>Stack residual blocks </li>
-<li>Every residual block has two $$$3\times3$$$ conv layers.  </li>
+<li>Every residual block has two $3\times3$ conv layers.  </li>
 <li>Periodically, double number of filters and downsample spatially using stride2.</li>
 <li>Additional conv layer at the beginning. </li>
-<li>No FC layers at the end(only FC1000 to output classes).<br><img src="resnet_full.png" width="600px"></li>
+<li>No FC layers at the end(only FC1000 to output classes).<br><img src="/images/resnet_full.png" alt=""></li>
 </ol>
 <p><i>Reference</i>: Stanford CS231n </p>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
