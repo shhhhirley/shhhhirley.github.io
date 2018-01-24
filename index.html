@@ -256,128 +256,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/24/neural-nets/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/24/neural-nets/" itemprop="url">neural nets</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T10:22:02-08:00">
-                2018-01-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>$$$Convolution:$$$<br>The primary purpose of Convolution in case of ConvNet is to extract features from the input image. Different values of the filter matrix will produce different effect of convolution. It also captures local dependencies in the original image. In practice, a CNN learns calues of the filters on its own during the training process. The more number of filters we have, the more image features get etracted and the better our network becomes at recognizing patterns in unseen images.</p>
-<p>$$$Relu:$$$<br>Relu could be used after every convolution operation. The purpose of Relu is to introduce non-linearity in ConvNet, since most of the real-world data would be non-linear.</p>
-<p>$$$Pooling:$$$<br>Pooling reduces the dimensionality of each feature map but retains the most important information.  </p>
-<ol>
-<li>Pooling makes the input representations smaller and more manageable.  </li>
-<li>reduces the number of parameters and computations in the network, therefore, controlling overfitting.  </li>
-<li>makes the network invariant to smaller transformations, distortions and translations in the input image.  </li>
-<li>helps us arrive at an almost scale invariant representation of our image. </li>
-</ol>
-<p>$$$Fully Connected Layer:$$$<br>FC layer is a traditional multi-layer perceptron that uses a softmax/svm classifier in the output layer. The term “fully connected” implies that every neuron in the previous layer is connected to every neuron on the next layer.</p>
-<p>Reference:<br><a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" target="_blank" rel="external">https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2018/01/22/cs231n-CNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1422,6 +1300,121 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/08/lc-84/" itemprop="url">lc 84</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T11:59:29-07:00">
+                2017-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>全是套路！</p>
+<p>84: 给定一组数字，找最大的矩形。用stack可以实现复杂度O(n).关键点：扩充数组长度到n+1，赋值0.这样最后会把stack清空。每次pop找出的是以当前pop出的值为高度的最大矩形面积。</p>
+<p>85: 给定很多组数字。找出最大矩形。一行一行的找。如果是1，下面一行是前面几行的累加。如果是0，清空为0。</p>
+<p>只贴84的代码了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int largestRectangleArea(int[] heights) &#123;</div><div class="line">        Stack&lt;Integer&gt; s = new Stack&lt;&gt;();</div><div class="line">        int maxArea = 0;</div><div class="line">        int[] h = new int[heights.length+1];</div><div class="line">        for(int i = 0; i &lt;= heights.length; i++)</div><div class="line">        &#123;</div><div class="line">            if(i == heights.length)</div><div class="line">                h[i] = 0;</div><div class="line">            else </div><div class="line">                h[i] = heights[i];</div><div class="line">        &#125;</div><div class="line">        for(int i = 0; i &lt; h.length; i++)</div><div class="line">        &#123;</div><div class="line">            if(s.isEmpty() || h[i] &gt;= h[s.peek()])</div><div class="line">                s.push(i);</div><div class="line">            else if(h[i] &lt; h[s.peek()])</div><div class="line">            &#123;</div><div class="line">                int tp = s.pop();</div><div class="line">                maxArea = Math.max(maxArea,h[tp]*(s.isEmpty()?i:i-1-s.peek()));</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return maxArea;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1471,7 +1464,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
