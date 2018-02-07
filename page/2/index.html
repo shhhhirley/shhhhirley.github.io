@@ -256,6 +256,118 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shirley Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shirley's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/08/lc-96/" itemprop="url">lc 96</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T16:44:05-07:00">
+                2017-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>被各种dp题虐的体无完肤。这也是一种递归式新的类型吧。<br>以1为节点的树取决于n-1个节点的树，以2为节点的树取决于n-2个节点的树。以n为节点的树和以1为节点的树一样取决于n-1个节点的树。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numTrees(int n) &#123;</div><div class="line">        int[] num = new int[n+1];</div><div class="line">        num[0] = 1;//空树</div><div class="line">        num[1] = 1;//一个节点</div><div class="line">        for(int i = 2; i &lt;= n; i++)</div><div class="line">        &#123;</div><div class="line">            for(int j = 0; j &lt; i; j++)</div><div class="line">                num[i] += num[j]*num[i-1-j];//以j+1为root的树的个数</div><div class="line">        &#125;</div><div class="line">        return num[n];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/10/08/lc-84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1053,16 +1165,6 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <h3 id="Longest-palindromic-substring"><a href="#Longest-palindromic-substring" class="headerlink" title="Longest palindromic substring:"></a>Longest palindromic substring:</h3><p>create a boolean 2-dimensional array to keep the status of a substring with different beginnings and ends. For example, dp[i][j] is to represent if the substring starting at i, ending with j is a palindromic substring. Then, check if d[i+1][j+1] is palindromic by judging if d[i][j] &amp;&amp; s[i+1] == s[j+1]. </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> public String longestPalindrome(String s) </div><div class="line">	&#123;</div><div class="line">		if(s.length()==1||s==null)</div><div class="line">		    return s;</div><div class="line">		boolean dp[][] = new boolean[s.length()][s.length()];</div><div class="line">		int i,j;</div><div class="line">		int max = 0;</div><div class="line">		 </div><div class="line">		String sol = s.substring(0,1);</div><div class="line">	for(i = s.length()-1; i &gt;= 0; i--)</div><div class="line">		&#123;</div><div class="line">	for(j = i; j &lt; s.length(); j++)</div><div class="line">		if(s.charAt(i)==s.charAt(j)&amp;&amp;((j-i&lt;=2)||dp[i+1][j-1]))</div><div class="line">			&#123;</div><div class="line">				dp[i][j] = true;</div><div class="line">				if(j-i+1 &gt; max)</div><div class="line">				&#123;</div><div class="line">				    max = j-i+1;</div><div class="line">					sol = s.substring(i, j+1);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">				</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		return sol;</div><div class="line">	</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Trapping-Rain-Water"><a href="#Trapping-Rain-Water" class="headerlink" title="Trapping Rain Water"></a>Trapping Rain Water</h3><p>首先是我自己写的。先记录差值，寻找极大值点。再从极大值点向右找到第一个比该点大的点，容量就是极大值点减去中间的值。如果没找到比极大值点大的点，从最右往左找最大的点作为容器的高度。实现过程有很多复杂的小细节，太麻烦了！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">public int trap(int[] height)</div><div class="line">	&#123;</div><div class="line">		ArrayList&lt;Integer&gt; al = new ArrayList&lt;&gt;();</div><div class="line">		if(height.length == 0 || height.length == 1)</div><div class="line">            return 0;</div><div class="line">        int[] dis = new int[height.length-1];</div><div class="line">        int rain = 0;</div><div class="line">        for(int i = 0; i &lt; dis.length; i++)</div><div class="line">        &#123;</div><div class="line">            dis[i] = height[i+1]-height[i];</div><div class="line">        &#125;</div><div class="line">        for(int i = 0; i &lt; dis.length; i++)</div><div class="line">        &#123;</div><div class="line">        	if(dis[i] &gt; 0)</div><div class="line">        		break;</div><div class="line">        	if(dis[i] &lt; 0)</div><div class="line">        	&#123;</div><div class="line">        		al.add(i);</div><div class="line">        		break;</div><div class="line">        	&#125;</div><div class="line">            	</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">        for(int i = 0; i &lt; dis.length-1; i++)</div><div class="line">        &#123;</div><div class="line">        	</div><div class="line">            if(dis[i]&gt;0 &amp;&amp; dis[i+1]&lt;0)</div><div class="line">            &#123;    </div><div class="line">            	al.add(i+1);</div><div class="line">                      </div><div class="line">                &#125;</div><div class="line">            else if(dis[i] &gt; 0 &amp;&amp; dis[i+1] == 0)</div><div class="line">            &#123;</div><div class="line">            	dis[i+1] = dis[i];</div><div class="line">            &#125;</div><div class="line">           </div><div class="line">                    </div><div class="line">        &#125;</div><div class="line">        if(dis[dis.length-1] &gt; 0)</div><div class="line">        	al.add(dis.length);</div><div class="line"> </div><div class="line">    for(int i = 0; i &lt; al.size()-1; i++)</div><div class="line">    &#123;</div><div class="line">        int j = i+1;</div><div class="line">        </div><div class="line">    	for(;j &lt; al.size(); j++)</div><div class="line">        &#123;</div><div class="line">            if(height[al.get(i)] &lt; height[al.get(j)])</div><div class="line">            &#123;</div><div class="line">                for(int k = al.get(i); k &lt; al.get(j); k++)</div><div class="line">                &#123;</div><div class="line">                	if(height[al.get(i)] &gt; height[k])</div><div class="line">                		rain += height[al.get(i)] - height[k];           </div><div class="line">                &#125;</div><div class="line">                i = j-1;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">   </div><div class="line">        if(j == al.size() &amp;&amp; height[al.get(i)] &gt;= height[al.get(j-1)])</div><div class="line">        &#123;</div><div class="line">        	j--;</div><div class="line">        </div><div class="line">    </div><div class="line">            int max = height[al.get(j)];</div><div class="line">       </div><div class="line">            int temp = j;</div><div class="line">            for(int k = al.size()-1; k &gt; i; k--)</div><div class="line">            &#123;</div><div class="line">                 if(height[al.get(k)] &gt; max)</div><div class="line">                &#123;</div><div class="line">                    max = height[al.get(k)];</div><div class="line">                    temp = k;</div><div class="line">                &#125;</div><div class="line">            &#125; </div><div class="line"></div><div class="line">             for(int k = al.get(i); k &lt; al.get(temp); k++)</div><div class="line">                &#123;</div><div class="line">            	if(max &gt; height[k])</div><div class="line">                    rain += max - height[k];</div><div class="line">                &#125;</div><div class="line">            </div><div class="line">            i = temp-1;</div><div class="line">          </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">        return rain;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h3 id="大神解法："><a href="#大神解法：" class="headerlink" title="大神解法："></a>大神解法：</h3><ol>
-<li>两次遍历，一次存左边最大，一次存右边最大，然后比较左右中较小的作为容器的高度，计算存水量。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public int trap(int[] A) &#123;</div><div class="line">    if(A==null || A.length==0)</div><div class="line">        return 0;</div><div class="line">    int max = 0;</div><div class="line">    int res = 0;</div><div class="line">    int[] container = new int[A.length];</div><div class="line">    for(int i=0;i&lt;A.length;i++)</div><div class="line">    &#123;</div><div class="line">        container[i]=max;</div><div class="line">        max = Math.max(max,A[i]);</div><div class="line">    &#125;</div><div class="line">    max = 0;</div><div class="line">    for(int i=A.length-1;i&gt;=0;i--)</div><div class="line">    &#123;</div><div class="line">        container[i] = Math.min(max,container[i]);</div><div class="line">        max = Math.max(max,A[i]);</div><div class="line">        res += container[i]-A[i]&gt;0?container[i]-A[i]:0;</div><div class="line">    &#125;    </div><div class="line">    return res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>一次遍历即可，从两边往中间遍历。如果左值小于右值，右值不变，左值右移，如果最左点往右找到比最左值小的值，存水；否则，将比最左值小的值作为最左值。再次比较左右值大小。如果左值大于右值，右值左移，如果找到比最右值小的值，存水；否则，将比最右值大的值作为最右值。再次比较左右值大小。直到左右遇到。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public int trap(int[] A) &#123;</div><div class="line">    if(A==null || A.length ==0)</div><div class="line">        return 0;</div><div class="line">    int l = 0;</div><div class="line">    int r = A.length-1;</div><div class="line">    int res = 0;</div><div class="line">    while(l&lt;r)</div><div class="line">    &#123;</div><div class="line">        int min = Math.min(A[l],A[r]);</div><div class="line">        if(A[l] == min)</div><div class="line">        &#123;</div><div class="line">            l++;</div><div class="line">            while(l&lt;r &amp;&amp; A[l]&lt;min)</div><div class="line">            &#123;</div><div class="line">                res += min-A[l];</div><div class="line">                l++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">            r--;</div><div class="line">            while(l&lt;r &amp;&amp; A[r]&lt;min)</div><div class="line">            &#123;</div><div class="line">                res += min-A[r];</div><div class="line">                r--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1369,119 +1471,6 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/zhchnchn/zhchnchn.github.io.git/2017/08/31/leetcode-25/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shirley Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shirley's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/31/leetcode-25/" itemprop="url">leetcode_25</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-31T10:49:06-07:00">
-                2017-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Leetcode 25：Reverse Nodes in K-Group</p>
-<p>改变顺序的时候注意定义几个关键点，分别是root，node，head。head指的是链表本身的第一个点，root是链表的开头，node是root的下一个点。定义root之后可以直接连接每k个节点。每次替换两个数的位置，需要替换k-2次，再以新的点为root，进行新一轮的替换。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">ListNode root = new ListNode(-1);</div><div class="line">	root.next = head;</div><div class="line">	ListNode res = root;</div><div class="line">	ListNode temp = root;</div><div class="line">	int count = 0;</div><div class="line">	while(temp != null)</div><div class="line">	&#123;</div><div class="line">		count++;</div><div class="line">		temp = temp.next;</div><div class="line">	&#125;</div><div class="line">	while(count &gt; k)</div><div class="line">	&#123;</div><div class="line">		for(int j = 0; j &lt; k-1; j++)</div><div class="line">		&#123;</div><div class="line">			ListNode node = root.next;</div><div class="line">			root.next = head.next;</div><div class="line">			head.next = root.next.next;</div><div class="line">			root.next.next = node;</div><div class="line">		&#125;</div><div class="line">		root = head;</div><div class="line">		head = root.next;</div><div class="line">		count -= k;</div><div class="line">	&#125;</div><div class="line">	return res.next;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1531,7 +1520,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
